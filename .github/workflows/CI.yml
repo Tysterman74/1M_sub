@@ -25,5 +25,5 @@ jobs:
         uses: ceceppa/godot-gut-ci@main
         with:
           godot_version: 4.1.3
-          gut_params: -gdir=res://Tests/
+          gut_params: -gdir=res://Tests/ -gconfig=res://.gut_editor_config.json
 
