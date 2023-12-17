@@ -22,7 +22,7 @@ jobs:
 
       - name: Docker test
         # Using main to get latest fix for GLIBC_2.28 for Godot 4.2
-        uses: ceceppa/godot-gut-ci@main
+        uses: Tysterman74/godot-gut-ci@main
         with:
           godot_version: 4.1.3
           gut_params: -gdir=res://Tests/ -gconfig=res://.gut_editor_config.json
