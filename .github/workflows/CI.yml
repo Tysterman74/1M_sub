@@ -21,7 +21,7 @@ jobs:
 #- uses: croconut/godot-tester@v5.1
       with:
         # required
-        version: "4.0"
+        version: "4.2.1"
         # the type of release of godot that the tests should be run with
         release_type: "stable"
         is-mono: "false"
