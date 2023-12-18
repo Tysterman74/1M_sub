@@ -48,7 +48,7 @@ jobs:
         # not checked by default, set to a number to limit the 
         # maximum amount of failed tests for a passing test suite 
         # default is GUTs default: 'res://.gutconfig.json'; set this to load a different config file
-        config-file: "res://.gut_editor_config.json" 
+        # config-file: "res://.gut_editor_config.json" 
         # designate a custom url to download the godot binary from
         # custom-godot-dl-url: ""
         # relative path to the xml file to read / write GUT's results from, recommended
