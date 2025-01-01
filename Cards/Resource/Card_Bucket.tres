@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="CardBase" load_steps=19 format=3 uid="uid://c84k4o417cmn5"]
+
+[ext_resource type="Script" path="res://Cards/CardBase.gd" id="1_61lr4"]
+[ext_resource type="Script" path="res://Cards/Effects/EffectApplyStatus.gd" id="1_fe57t"]
+[ext_resource type="Script" path="res://Status/Buffs/Buff_Strength.gd" id="2_uea74"]
+[ext_resource type="Script" path="res://Entity/Components/Stats/StatModifiers.gd" id="3_prkhi"]
+[ext_resource type="Script" path="res://Cards/Effects/EffectData.gd" id="4_77vbv"]
+[ext_resource type="Script" path="res://Cards/Targeting/TargetPlayer.gd" id="5_4r8vi"]
+[ext_resource type="Script" path="res://Cards/Effects/EffectAddBlock.gd" id="6_n73ff"]
+[ext_resource type="Script" path="res://Cards/EnergyData.gd" id="7_6mi6o"]
+[ext_resource type="Texture2D" uid="uid://b8yhe5ho4uxjo" path="res://Art/Card_art/Bucket__IAmWhatITorture.jpg" id="7_48c5o"]
+
+[sub_resource type="Resource" id="Resource_p3ubi"]
+script = ExtResource("3_prkhi")
+permanent_add = 0
+permanent_multiply = 1.0
+temporary_add = 1
+temporary_multiply = 1.0
+
+[sub_resource type="Resource" id="Resource_d13n3"]
+script = ExtResource("2_uea74")
+infinite_duration = false
+status_turn_duration = 3
+status_power = 1.0
+status_modifier_base_value = SubResource("Resource_p3ubi")
+
+[sub_resource type="Resource" id="Resource_aqx8j"]
+script = ExtResource("1_fe57t")
+status_to_apply = SubResource("Resource_d13n3")
+
+[sub_resource type="Resource" id="Resource_pydnv"]
+script = ExtResource("5_4r8vi")
+
+[sub_resource type="Resource" id="Resource_v5ths"]
+script = ExtResource("4_77vbv")
+effect = SubResource("Resource_aqx8j")
+value = 0
+targeting_function = SubResource("Resource_pydnv")
+
+[sub_resource type="Resource" id="Resource_uk4bv"]
+script = ExtResource("6_n73ff")
+
+[sub_resource type="Resource" id="Resource_rcg5o"]
+script = ExtResource("5_4r8vi")
+
+[sub_resource type="Resource" id="Resource_0d3iv"]
+script = ExtResource("4_77vbv")
+effect = SubResource("Resource_uk4bv")
+value = 2
+targeting_function = SubResource("Resource_rcg5o")
+
+[sub_resource type="Resource" id="Resource_x2e20"]
+script = ExtResource("7_6mi6o")
+energy_cost = 1
+
+[resource]
+script = ExtResource("1_61lr4")
+application_type = 0
+card_title = "Bucket"
+card_key_art = ExtResource("7_48c5o")
+card_type = 1
+card_description = "Gain Encourage and 2 Defense."
+card_artist_name = "IAmWhatITorture"
+card_effects_data = Array[ExtResource("4_77vbv")]([SubResource("Resource_v5ths"), SubResource("Resource_0d3iv")])
+energy_info = SubResource("Resource_x2e20")

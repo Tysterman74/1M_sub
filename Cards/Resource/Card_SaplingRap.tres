@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="CardBase" load_steps=16 format=3 uid="uid://bl70he1uuon32"]
+
+[ext_resource type="Script" path="res://Cards/CardBase.gd" id="1_el8i7"]
+[ext_resource type="Script" path="res://Cards/Effects/EffectDamageCardDeck.gd" id="1_sslax"]
+[ext_resource type="PackedScene" uid="uid://bbseovtwsgegg" path="res://Cards/Animation/Scene/Anim_Slap.tscn" id="1_v550m"]
+[ext_resource type="Script" path="res://Cards/Effects/EffectData.gd" id="2_51nps"]
+[ext_resource type="Script" path="res://Cards/Animation/CastPosition/CastPos_AllTargets.gd" id="2_al8tr"]
+[ext_resource type="Script" path="res://Cards/Targeting/TargetingBase.gd" id="3_h4hw6"]
+[ext_resource type="Script" path="res://Cards/Animation/CastAnimationData.gd" id="3_oq5dc"]
+[ext_resource type="Script" path="res://Cards/EnergyData.gd" id="7_t7dvj"]
+[ext_resource type="Texture2D" uid="uid://cnt8wrttfdvon" path="res://Art/Card_art/Sapling Rap__Nanojya.png" id="7_xhstx"]
+
+[sub_resource type="Resource" id="Resource_teuvh"]
+script = ExtResource("2_al8tr")
+offset = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_w8lhe"]
+script = ExtResource("3_oq5dc")
+cast_animation_scene = ExtResource("1_v550m")
+cast_position = SubResource("Resource_teuvh")
+
+[sub_resource type="Resource" id="Resource_dv8t7"]
+script = ExtResource("1_sslax")
+
+[sub_resource type="Resource" id="Resource_qvd0e"]
+script = ExtResource("3_h4hw6")
+
+[sub_resource type="Resource" id="Resource_r8ec8"]
+script = ExtResource("2_51nps")
+effect = SubResource("Resource_dv8t7")
+value = 0
+targeting_function = SubResource("Resource_qvd0e")
+animation_data = SubResource("Resource_w8lhe")
+
+[sub_resource type="Resource" id="Resource_fe2us"]
+script = ExtResource("7_t7dvj")
+energy_cost = 2
+
+[resource]
+script = ExtResource("1_el8i7")
+application_type = 1
+card_title = "Sapling Rap"
+card_key_art = ExtResource("7_xhstx")
+card_type = 0
+card_description = "Dea; damage equal to the number of cards in your deck."
+card_artist_name = "Nanojya"
+card_effects_data = Array[ExtResource("2_51nps")]([SubResource("Resource_r8ec8")])
+energy_info = SubResource("Resource_fe2us")
